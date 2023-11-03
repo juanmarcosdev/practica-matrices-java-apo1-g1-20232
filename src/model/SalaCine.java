@@ -19,7 +19,7 @@ public class SalaCine {
     public String reservarAsiento(int fila, int asiento) {
         if(!asientos[fila][asiento]) {
             asientos[fila][asiento] = true;
-            return "Asiento reservado exitosamente"
+            return "Asiento reservado exitosamente";
         } else {
             return "Asiento ya está reservado, no se puede ocupar";
         }

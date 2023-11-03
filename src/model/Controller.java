@@ -25,6 +25,10 @@ public class Controller {
         return procinal.toString();
     }
 
+    public void comprarSilla(int fila, int asientoEnFila) {
+        procinal.reservarAsiento(fila, asientoEnFila);
+    }
+
 
 
 

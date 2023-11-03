@@ -5,7 +5,7 @@ import model.Controller;
 
 public class Executable {
 
-    private Scanner reader;
+    //private Scanner reader;
     private Controller cont;
 
     /**
@@ -17,7 +17,7 @@ public class Executable {
      *       entrada y el controlador.
      */
     public Executable() {
-        reader = new Scanner(System.in);
+        //reader = new Scanner(System.in);
         cont = new Controller();
     }
 
@@ -32,6 +32,8 @@ public class Executable {
 
     public void run() {
 
+        cont.inicialiceSala();
+        cont.comprarSilla(6, 0);
         System.out.println(cont.mostrarSala());
 
 
