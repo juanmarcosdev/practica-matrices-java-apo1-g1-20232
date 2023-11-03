@@ -1,8 +1,10 @@
+package model;
+
 public class SalaCine {
-    private boolean[][] asientos;
+    private boolean[][] asientos; // Declaro
 
     public SalaCine(int filas, int asientosPorFila) {
-        this.asientos = new boolean[filas][asientosPorFila];
+        this.asientos = new boolean[filas][asientosPorFila]; // Inicializo
         poblarSala();
     }
 
@@ -14,12 +16,12 @@ public class SalaCine {
         }
     }
 
-    public void reservarAsiento(int fila, int asiento) {
-        // Acceso a la matriz y marcar como reservado
+    public String reservarAsiento(int fila, int asiento) {
         if(!asientos[fila][asiento]) {
             asientos[fila][asiento] = true;
+            return "Asiento reservado exitosamente"
         } else {
-            System.out.println("Asiento ya está reservado.");
+            return "Asiento ya está reservado, no se puede ocupar";
         }
     }
 
@@ -37,11 +39,5 @@ public class SalaCine {
             result += "\n";
         }
         return result;
-    }
-
-    public static void main(String[] args) {
-        SalaCine cine = new SalaCine(5, 8); // 5 filas con 8 asientos cada una
-        cine.reservarAsiento(2, 4);
-        System.out.println(cine);
     }
 }

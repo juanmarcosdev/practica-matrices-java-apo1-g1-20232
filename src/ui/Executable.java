@@ -1,6 +1,5 @@
 package ui;
 
-import java.util.*;
 import model.Controller;
 
 
@@ -33,6 +32,7 @@ public class Executable {
 
     public void run() {
 
+        System.out.println(cont.mostrarSala());
 
 
     }
