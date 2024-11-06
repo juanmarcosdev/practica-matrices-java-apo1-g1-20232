@@ -5,7 +5,7 @@ import model.SalaCine;
 
 public class Controller {
 
-    private SalaCine procinal; // Declarando sala de cine
+    private SalaCine cinemark; // Declarando sala de cine
 
     /**
      * Constructor de la clase Controller para inicializar 
@@ -18,15 +18,23 @@ public class Controller {
     }
 
     public void inicialiceSala() {
-        procinal = new SalaCine(7,7);
+        cinemark = new SalaCine(7,7);
     }
 
     public String mostrarSala() {
-        return procinal.toString();
+        return cinemark.toString();
     }
 
     public void comprarSilla(int fila, int asientoEnFila) {
-        procinal.reservarAsiento(fila, asientoEnFila);
+        cinemark.reservarAsiento(fila, asientoEnFila);
+    }
+
+    public int cantidadFilas() {
+        return cinemark.retornarCantFilas();
+    }
+
+    public int cantidadColumnas() {
+        return cinemark.retornarCantColumnas();
     }
 
 

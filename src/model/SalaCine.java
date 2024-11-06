@@ -40,4 +40,12 @@ public class SalaCine {
         }
         return result;
     }
+
+    public int retornarCantFilas() {
+        return asientos.length;
+    }
+
+    public int retornarCantColumnas() {
+        return asientos[0].length;
+    }
 }

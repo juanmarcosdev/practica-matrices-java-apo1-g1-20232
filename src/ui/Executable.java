@@ -33,7 +33,13 @@ public class Executable {
     public void run() {
 
         cont.inicialiceSala();
-        cont.comprarSilla(6, 0);
+        for(int i = 0; i < cont.cantidadFilas(); i++) {
+            if(i % 2 == 0) {
+                for(int j = 0; j < cont.cantidadColumnas(); j++) {
+                    cont.comprarSilla(i,j);
+                }
+            }
+        }
         System.out.println(cont.mostrarSala());
 
 
