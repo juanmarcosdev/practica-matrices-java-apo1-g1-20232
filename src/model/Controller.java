@@ -1,11 +1,14 @@
 package model;
 
 import model.SalaCine;
+import model.MatrizNumerica;
 
 
 public class Controller {
 
     private SalaCine cinemark; // Declarando sala de cine
+    private MatrizNumerica matriz1;
+    private MatrizNumerica matriz2;
 
     /**
      * Constructor de la clase Controller para inicializar 
@@ -14,7 +17,8 @@ public class Controller {
      * @post Se crea una instancia de Controller 
      */
     public Controller() {
-        
+        matriz1 = new MatrizNumerica(2,2);
+        matriz2 = new MatrizNumerica(2,2);
     }
 
     public void inicialiceSala() {
@@ -35,6 +39,14 @@ public class Controller {
 
     public int cantidadColumnas() {
         return cinemark.retornarCantColumnas();
+    }
+
+    public MatrizNumerica getMatriz1() {
+        return matriz1;
+    }
+
+    public MatrizNumerica getMatriz2() {
+        return matriz2;
     }
 
 

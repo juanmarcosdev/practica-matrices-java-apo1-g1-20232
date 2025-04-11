@@ -35,35 +35,22 @@ public class Executable {
 
     public void run() {
 
-        cont.inicialiceSala();
-        /*
-        for(int i = 0; i < cont.cantidadFilas(); i++) {
-            if(i % 2 == 0) {
-                for(int j = 0; j < cont.cantidadColumnas(); j++) {
-                    cont.comprarSilla(i,j);
-                }
+        System.out.println("Inserte los numeros de la matriz 1: ");
+        for(int i = 0; i < 2; i++) {
+            for(int j = 0; j < 2; j++) {
+                System.out.println("Insertar dato en fila " + i + " y columna " + j + " : ");
+                int valor = escaner.nextInt();
+                escaner.nextLine();
+                cont.getMatriz1().insertarValor(i, j, valor);
             }
         }
-        */
-       /*
-       int posicionFila, posicionColumna;
-       System.out.println("Dime la coordenada fila de la silla a reservar: ");
-       posicionFila = escaner.nextInt();
-       escaner.nextLine(); // Evitar bug Scanner
-       System.out.println("Dime la coordenada columna de la silla a reservar: ");
-       posicionColumna = escaner.nextInt();
-       escaner.nextLine(); // Evitar bug Scanner
-       cont.comprarSilla(posicionFila, posicionColumna);
-       */
-       for(int i = 0; i < cont.cantidadFilas(); i++) {
-            if(i % 2 != 0) {
-                for(int j = 0; j < cont.cantidadColumnas(); j++) {
-                    cont.comprarSilla(i,j);
-                }
+    
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                System.out.print(cont.getMatriz1().getMatriz()[i][j] + " ");
+            }
+            System.out.println();
         }
-       }
-       System.out.println(cont.mostrarSala());
-
 
     }
 
