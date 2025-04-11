@@ -1,5 +1,6 @@
 package ui;
 
+import java.util.Scanner; // Importar Scanner
 import model.Controller;
 
 
@@ -7,6 +8,7 @@ public class Executable {
 
     //private Scanner reader;
     private Controller cont;
+    private Scanner escaner; // Ponner Scanner como atributo
 
     /**
      * Constructor de la clase Executable para inicializar el lector de entrada y el
@@ -19,6 +21,7 @@ public class Executable {
     public Executable() {
         //reader = new Scanner(System.in);
         cont = new Controller();
+        escaner = new Scanner(System.in); // Inicializar Scanner
     }
 
     /**
@@ -33,6 +36,7 @@ public class Executable {
     public void run() {
 
         cont.inicialiceSala();
+        /*
         for(int i = 0; i < cont.cantidadFilas(); i++) {
             if(i % 2 == 0) {
                 for(int j = 0; j < cont.cantidadColumnas(); j++) {
@@ -40,7 +44,25 @@ public class Executable {
                 }
             }
         }
-        System.out.println(cont.mostrarSala());
+        */
+       /*
+       int posicionFila, posicionColumna;
+       System.out.println("Dime la coordenada fila de la silla a reservar: ");
+       posicionFila = escaner.nextInt();
+       escaner.nextLine(); // Evitar bug Scanner
+       System.out.println("Dime la coordenada columna de la silla a reservar: ");
+       posicionColumna = escaner.nextInt();
+       escaner.nextLine(); // Evitar bug Scanner
+       cont.comprarSilla(posicionFila, posicionColumna);
+       */
+       for(int i = 0; i < cont.cantidadFilas(); i++) {
+            if(i % 2 != 0) {
+                for(int j = 0; j < cont.cantidadColumnas(); j++) {
+                    cont.comprarSilla(i,j);
+                }
+        }
+       }
+       System.out.println(cont.mostrarSala());
 
 
     }
